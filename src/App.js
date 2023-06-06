@@ -1,7 +1,7 @@
 // CLASS 07 25:23 MINUTES
 
 import './App.css';
-import Axios from 'axios'
+import Axios from 'axios' //make the API request
 import {  useState } from 'react';
 
 function App() {

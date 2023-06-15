@@ -1,20 +1,28 @@
 // MAKING YOUR OWN 'HOOK'
 import "./App.css";
 import { useToggle } from "./useToggle";
+import { useCounter } from "./useCounter";
+
 
 function App() {  
   const { state: isVisible, toggle} = useToggle()
-  // const [isVisible2, toggle2] = useToggle()
+  const { valueCounter, sum, subtract } = useCounter()  
 
   return(
     <div className="App"> 
       <button onClick={toggle}>
         {isVisible ? "Hide" : "Show"}
       </button>    
-      {isVisible && <h1>Hidden text</h1>}
+      {isVisible && <h1>Hidden text</h1>}      
+      
+      <button onClick={sum}>
+      {"+"}
+      </button>
+      <h1>{valueCounter}</h1>
+      <button onClick={subtract}>
+      {"-"}
+      </button>
 
-      {/* <button onClick={toggle2}>{isVisible2 ? "Hide2" : "Show2"}</button>
-      {isVisible2 && <h1>Hidden Text 2</h1>} */}
     </div>
   );  
 }
